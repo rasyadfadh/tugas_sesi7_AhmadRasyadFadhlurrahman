@@ -1,2 +1,2 @@
 # tugas_sesi7_AhmadRasyadFadhlurrahman
-Tugas Sesi 7
+API dgn reqres
