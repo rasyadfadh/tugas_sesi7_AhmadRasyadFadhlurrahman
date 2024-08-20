@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-20T02:37:09.276Z",
+    "end": "2024-08-20T02:37:10.926Z",
+    "duration": 1650,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "821f6dc0-8a8f-4634-bc51-387bb3fb7722",
+      "title": "",
+      "fullFile": "C:\\Users\\ASUS\\Desktop\\tugas sesi 7\\tugas_sesi7_AhmadRasyadFadhlurrahman\\test\\tugas_sesi_7.js",
+      "file": "\\test\\tugas_sesi_7.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2eaf85d2-e32a-4c4c-b9b9-80d62fcfd6f0",
+          "title": "API Test for \"reqres.in",
+          "fullFile": "C:\\Users\\ASUS\\Desktop\\tugas sesi 7\\tugas_sesi7_AhmadRasyadFadhlurrahman\\test\\tugas_sesi_7.js",
+          "file": "\\test\\tugas_sesi_7.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test - GET All Objects",
+              "fullTitle": "API Test for \"reqres.in Test - GET All Objects",
+              "timedOut": false,
+              "duration": 184,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n.get(\"users?page=2\");\nconsole.log(response.statusCode);\nconsole.log(response.body)\n        \n\n        //  //assertion\n        const schemaPath = \"resources/jsonSchema/get-object-schema.json\"\n        const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8')) \n        assert.jsonSchema(response.body, jsonSchema)\n        \n        assert.equal(response.statusCode, 200)\n        expect(response.statusCode).to.equal(200)",
+              "err": {},
+              "uuid": "0eba7db7-be86-4a6e-8929-1dae2b5b1888",
+              "parentUUID": "2eaf85d2-e32a-4c4c-b9b9-80d62fcfd6f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - POST Store Object",
+              "fullTitle": "API Test for \"reqres.in Test - POST Store Object",
+              "timedOut": false,
+              "duration": 450,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n.post(\"users\")\n.send(body)\n       \nconsole.log(response.statusCode);\nconsole.log(response.body)\n    \n    //     //assertion\n       should(response.statusCode === 200)\n const schemaPath = \"resources/jsonSchema/post-object-shcema.json\"\n const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8')) \nassert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "e2d07526-9a1c-4cc4-9281-e44fa79bf687",
+              "parentUUID": "2eaf85d2-e32a-4c4c-b9b9-80d62fcfd6f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - Delete a user by ID",
+              "fullTitle": "API Test for \"reqres.in Test - Delete a user by ID",
+              "timedOut": false,
+              "duration": 530,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n            const response = await axios.delete(`${BASE_URL}users/2`);\n            expect(response.status).to.equal(204); \n            expect(response.data).to.be.empty; \n          } catch (error) {\n            throw new Error(`Request failed with status code ${error.response.status}`);\n          }",
+              "err": {},
+              "uuid": "655a4645-5008-4069-90f7-a24b483fc4b2",
+              "parentUUID": "2eaf85d2-e32a-4c4c-b9b9-80d62fcfd6f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - PUT Update Object",
+              "fullTitle": "API Test for \"reqres.in Test - PUT Update Object",
+              "timedOut": false,
+              "duration": 473,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n.put(\"users/2\")\n.send(updatebody)\n           \nconsole.log(response.statusCode);\nconsole.log(response.body)\n        \n        //     //assertion\n    \n          const schemaPath = \"resources/jsonSchema/put-object-schema.json\"\n          const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8')) \n          assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "febf75a1-238b-4249-a68f-36504c5ba9ff",
+              "parentUUID": "2eaf85d2-e32a-4c4c-b9b9-80d62fcfd6f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0eba7db7-be86-4a6e-8929-1dae2b5b1888",
+            "e2d07526-9a1c-4cc4-9281-e44fa79bf687",
+            "655a4645-5008-4069-90f7-a24b483fc4b2",
+            "febf75a1-238b-4249-a68f-36504c5ba9ff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1637,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
